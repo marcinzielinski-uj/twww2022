@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>
+      NBP - waluty
+    </title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <style>
+      table {
+        border: 1px solid black;
+      }
+      td {
+        border: 1px solid black;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>NBP - tabela kursów z dnia <%= data[0].effectiveDate %></h1>
+
+    <table>
+      <tbody>
+         <% data[0].rates.forEach((row) => { %>
+            <tr>
+              <td><%=row.currency %></td> <td> <%=row.code %></td><td>  <%=row.mid %></td>
+            </tr>
+        <% }); %>
+      </tbody>
+    </table>
+
+  </body>
+</html>

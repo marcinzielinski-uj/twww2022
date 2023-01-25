@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>
+      NBP - waluty
+    </title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <style>
+      span {
+        color:blue;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>NBP - waluty</h1>
+
+  <form method="post">
+    <label>Podaj kod waluty (np. EUR, CHF, USD): </label><input name="a"><input type="submit">
+  </form>
+    <hr/>
+    <% if (data) { %>
+      <span>Kurs <%= data.currency %> (<%= data.code %>) w dniu <%= data.rates[0].effectiveDate %> to <%= data.rates[0].mid %> </span>
+    <% }%>
+  <hr/>
+  <a href="/nbp/">Powrót</a>
+
+  </body>
+</html>
